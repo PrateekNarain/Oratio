@@ -1,4 +1,4 @@
-# What's New in Eloquence v2.0
+# What's New in Oratio v2.0
 
 ## 🎉 Major Enhancements
 

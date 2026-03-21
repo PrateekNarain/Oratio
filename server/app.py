@@ -34,7 +34,7 @@ MONGO_URI = os.getenv("MONGODB_URI")
 if not MONGO_URI:
     raise ValueError("MONGODB_URI not set in environment variables")
 client = pymongo.MongoClient(MONGO_URI)
-db = client["Eloquence"]
+db = client["Oratio"]
 collections_user = db["user"]
 reports_collection = db["reports"]
 overall_reports_collection = db["overall_reports"]

@@ -6,7 +6,7 @@ from typing import Dict, Any
 
 # --- Configuration ---
 FLASK_URL = "http://127.0.0.1:5000/upload"
-VIDEO_PATH = r"D:\Eloquence-main\Eloquence-main\videoplayback.mp4"  # Using raw string for Windows path
+VIDEO_PATH = r"D:\Oratio-main\Oratio-main\videoplayback.mp4"  # Using raw string for Windows path
 USER_ID = "test_user_123"
 CONTEXT = "Demo Speech"
 TITLE = "Demo Speech"

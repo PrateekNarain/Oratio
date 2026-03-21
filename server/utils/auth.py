@@ -1,7 +1,7 @@
 import jwt
 import bcrypt
 
-SECRET_KEY = "eloquence_key"  
+SECRET_KEY = "oratio_key"  
 
 # Hash the password
 def hash_password(password):

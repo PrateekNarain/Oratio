@@ -15,7 +15,7 @@ auth_bp = Blueprint('auth', __name__, url_prefix='/auth')  # Add url_prefix here
 load_dotenv()
 MONGO_URI = os.getenv("MONGODB_URI") or "mongodb+srv://prateeknarain001_db_user:narain9812461880@cluster0.vewvizi.mongodb.net/"
 client = pymongo.MongoClient(MONGO_URI)
-db = client["Eloquence"]
+db = client["Oratio"]
 users_collection = db["users"]
 
 

@@ -14,7 +14,7 @@ import { EmotionTimelineChart, POSChart, ConfidenceRadar, AnimatedCounter } from
 import "../components/bg.css";
 import { useTheme } from "../context/ThemeContext";
 import Markdown from "markdown-to-jsx";
-// --- Ensure all logic is inside a React component ---
+
 
 
 export default function ReportPage() {
@@ -94,7 +94,7 @@ export default function ReportPage() {
     );
   }
 
-  // ...existing code...
+
 
   const colors = {
     vocab: "#FF9F43",

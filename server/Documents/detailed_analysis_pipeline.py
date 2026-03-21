@@ -1,5 +1,5 @@
 """
-Detailed Analysis Pipeline for Eloquence Speech Analysis System
+Detailed Analysis Pipeline for Oratio Speech Analysis System
 
 This module orchestrates comprehensive speech analysis through multiple stages:
 1. Audio/Video Processing

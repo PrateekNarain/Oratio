@@ -1,4 +1,4 @@
-# Eloquence System Architecture & Flow
+# Oratio System Architecture & Flow
 
 ## Table of Contents
 1. [System Overview](#system-overview)
@@ -15,7 +15,7 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                     ELOQUENCE SYSTEM                             │
+│                     Oratio SYSTEM                             │
 │                AI-Powered Speech Analysis Platform               │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                   │

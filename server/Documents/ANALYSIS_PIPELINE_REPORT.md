@@ -1,7 +1,7 @@
-# 📊 Eloquence Analysis Pipeline - Complete Technical Report
+# 📊 Oratio Analysis Pipeline - Complete Technical Report
 
 ## Overview
-This document provides a comprehensive breakdown of how the Eloquence speech analysis system processes audio/video files and generates detailed speech analysis reports.
+This document provides a comprehensive breakdown of how the Oratio speech analysis system processes audio/video files and generates detailed speech analysis reports.
 
 ---
 
@@ -9,7 +9,7 @@ This document provides a comprehensive breakdown of how the Eloquence speech ana
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                         ELOQUENCE ANALYSIS PIPELINE                      │
+│                         Oratio ANALYSIS PIPELINE                      │
 └─────────────────────────────────────────────────────────────────────────┘
 
    INPUT                PROCESSING STAGES                    OUTPUT
@@ -1422,4 +1422,4 @@ For questions or issues:
 
 **Document Version**: 1.0  
 **Last Updated**: November 15, 2025  
-**Author**: Eloquence Development Team
+**Author**: Oratio Development Team

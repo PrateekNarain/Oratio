@@ -2,7 +2,7 @@
 
 ## Overview
 
-The linguistic analysis system is now fully integrated into your Eloquence app. Here's how everything works together:
+The linguistic analysis system is now fully integrated into your Oratio app. Here's how everything works together:
 
 ## Flow Diagram
 

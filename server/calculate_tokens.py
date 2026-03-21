@@ -1,5 +1,5 @@
 """
-Token Usage Calculator for Eloquence
+Token Usage Calculator for Oratio
 Shows exactly how many tokens each API call uses
 """
 

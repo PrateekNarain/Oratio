@@ -1,11 +1,11 @@
-# Eloquence: AI-Powered Speech Analysis System
+# Oratio: AI-Powered Speech Analysis System
 ## Comprehensive Technical Report
 
 ---
 
 ## Executive Summary
 
-**Eloquence** is an advanced speech analysis system that leverages state-of-the-art AI models to provide comprehensive feedback on public speaking performance. The system analyzes video/audio recordings across three dimensions: **Vocabulary**, **Voice (Vocal Emotions)**, and **Expressions (Facial Emotions)**, providing detailed linguistic insights, emotional analysis, and actionable recommendations.
+**Oratio** is an advanced speech analysis system that leverages state-of-the-art AI models to provide comprehensive feedback on public speaking performance. The system analyzes video/audio recordings across three dimensions: **Vocabulary**, **Voice (Vocal Emotions)**, and **Expressions (Facial Emotions)**, providing detailed linguistic insights, emotional analysis, and actionable recommendations.
 
 **Key Features:**
 - Multi-modal analysis (audio, video, text)
@@ -180,7 +180,7 @@ sequenceDiagram
 
 ### 2.1 Research Approach
 
-The Eloquence system employs a **multi-modal analysis methodology** that combines:
+The Oratio system employs a **multi-modal analysis methodology** that combines:
 
 1. **Speech-to-Text Conversion**: Automatic transcription using transformer-based models
 2. **Natural Language Processing**: Linguistic pattern detection and vocabulary analysis
@@ -1137,7 +1137,7 @@ def generate_scores_with_retry(transcription, audio_emotion, facial_emotion, lin
 
 | System | Features | Strengths | Limitations |
 |--------|----------|-----------|-------------|
-| **Eloquence (Ours)** | Multi-modal (audio+video+text), Linguistic analysis, AI feedback | Comprehensive, Context-aware, Detailed patterns | Requires multiple models |
+| **Oratio (Ours)** | Multi-modal (audio+video+text), Linguistic analysis, AI feedback | Comprehensive, Context-aware, Detailed patterns | Requires multiple models |
 | **Orai** | Mobile app, Real-time feedback | User-friendly, Quick | Limited depth, No video |
 | **Yoodli** | AI coach, Practice mode | Interactive, Gamified | Subscription-based |
 | **Speeko** | Voice analysis, Pacing | Real-time, Mobile | Audio-only |
@@ -1576,7 +1576,7 @@ word choice, though there's room for improvement in reducing repetitive phrases.
 
 ### 11.1 Summary
 
-Eloquence represents a comprehensive, AI-powered speech analysis system that combines:
+Oratio represents a comprehensive, AI-powered speech analysis system that combines:
 - **State-of-the-art AI models** (Whisper, SpeechBrain, DeepFace, spaCy, Gemini)
 - **Multi-modal analysis** (audio, video, text)
 - **Detailed linguistic insights** (300+ patterns)
@@ -1657,8 +1657,8 @@ The system achieves:
 
 ```bash
 # Clone repository
-git clone https://github.com/your-repo/eloquence.git
-cd eloquence/server
+git clone https://github.com/your-repo/Oratio.git
+cd Oratio/server
 
 # Create virtual environment
 python -m venv venv
@@ -1728,9 +1728,9 @@ Response:
 
 **Document Version**: 1.0  
 **Last Updated**: November 15, 2025  
-**Authors**: Eloquence Development Team  
-**Contact**: support@eloquence.ai
+**Authors**: Oratio Development Team  
+**Contact**: support@Oratio.ai
 
 ---
 
-*This comprehensive technical report documents the complete architecture, methodology, and implementation of the Eloquence speech analysis system. For questions or contributions, please contact the development team.*
+*This comprehensive technical report documents the complete architecture, methodology, and implementation of the Oratio speech analysis system. For questions or contributions, please contact the development team.*

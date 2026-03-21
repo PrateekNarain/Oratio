@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Create initial MongoDB data for the Eloquence app.
+"""Create initial MongoDB data for the Oratio app.
 
 This script reads MONGODB_URI from the environment (or .env), connects to
-the MongoDB instance and creates the `Eloquence` database with collections
+the MongoDB instance and creates the `Oratio` database with collections
 `user`, `reports`, and `overall_reports`. It will insert an admin user and
 one regular user (if they don't already exist) and a sample report/overall
 report for the regular user.
@@ -27,14 +27,14 @@ def main():
         sys.exit(1)
 
     client = pymongo.MongoClient(mongo_uri)
-    db = client["Eloquence"]
+    db = client["Oratio"]
 
     users = db["user"]
     reports = db["reports"]
     overall = db["overall_reports"]
 
     # Admin user
-    admin_email = "admin@eloquence.local"
+    admin_email = "admin@oratio.local"
     admin_username = "admin"
     admin_password_plain = "AdminPass123!"
 

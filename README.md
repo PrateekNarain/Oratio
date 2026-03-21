@@ -3,12 +3,12 @@
     <img src="" alt="CoC Inheritance 2024" width="500" height="166">
   </a>
   <br>
-     Eloquence 
+     Oratio 
 </h1>
 
 <div align="center">
 
-    Eloquence - AI driven public speaking tutor
+    Oratio - AI driven public speaking tutor
 </div>
 <hr>
 
@@ -30,11 +30,11 @@
 </details>
 
 ## 📝Description
-Eloquence is an AI-powered app that enhances public speaking by providing feedback on pace, modulation, volume, facial expressions, and vocabulary. It offers personalized tips during practice sessions to help users refine their delivery, build confidence, and communicate more effectively in any setting, from presentations to casual conversations.
+Oratio is an AI-powered app that enhances public speaking by providing feedback on pace, modulation, volume, facial expressions, and vocabulary. It offers personalized tips during practice sessions to help users refine their delivery, build confidence, and communicate more effectively in any setting, from presentations to casual conversations.
 
 ## 🔗Links
 
-- [GitHub Repository](https://github.com/PMS61/Eloquence)
+- [GitHub Repository](https://github.com/WavyWeb/Oratio)
 - [Demo Video]()
 - [Drive Link to Screenshots of your project]()
 - [Hosted Website Link]()
@@ -84,7 +84,7 @@ List down all the fully implemented features in your project
 ## 💸Applications
 <strong>Public Speaking Training: </strong> Ideal for individuals looking to improve their public speaking skills for presentations, speeches, and debates.
 
-<strong>Corporate Training: </strong>Companies can use Eloquence to train employees in effective communication, enhancing their presentation and interpersonal skills.
+<strong>Corporate Training: </strong>Companies can use Oratio to train employees in effective communication, enhancing their presentation and interpersonal skills.
 
 <strong>Education:</strong> Students can benefit from personalized feedback to improve their oral communication skills, which are crucial for academic success and future career prospects.
 

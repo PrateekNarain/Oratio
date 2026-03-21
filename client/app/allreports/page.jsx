@@ -56,8 +56,6 @@ const UserReportsList = () => {
         setReports(sorted);
       } catch (err) {
         console.error(err);
-        // Fallback to empty array on error so we can show demo data if desired, 
-        // or keep error state. For now, let's allow demo data to show on error/empty.
         setReports([]);
       } finally {
         setLoading(false);

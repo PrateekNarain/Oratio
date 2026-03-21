@@ -1,4 +1,4 @@
-# Testing Guide for Enhanced Eloquence Pipeline
+# Testing Guide for Enhanced Oratio Pipeline
 
 ## Overview
 

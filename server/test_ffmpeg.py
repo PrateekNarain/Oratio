@@ -3,7 +3,7 @@ import logging
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-video_file = "D:\\.Study\\projects\\Eloquence-main\\Eloquence-main\\ssvid.net--Phil-Lempert-s-2-minute-Speech-Demo_v720P.mp4"
+video_file = "D:\\.Study\\projects\\Oratio-main\\Oratio-main\\ssvid.net--Phil-Lempert-s-2-minute-Speech-Demo_v720P.mp4"
 
 try:
     logging.info(f"Testing ffmpeg with {video_file}")

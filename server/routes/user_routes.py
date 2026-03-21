@@ -6,7 +6,7 @@ import pymongo
 load_dotenv()
 MONGO_URI = os.getenv("MONGODB_URI")
 client = pymongo.MongoClient(MONGO_URI) if MONGO_URI else None
-db = client["Eloquence"] if client else None
+db = client["Oratio"] if client else None
 
 user_bp = Blueprint('users', __name__, url_prefix='/users')
 

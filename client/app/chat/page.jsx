@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Sidebar from "../components/Sidebar";
 import { Send } from "lucide-react";
 import { Inter, Roboto_Mono } from "next/font/google";
 import Markdown from "markdown-to-jsx";
@@ -26,33 +25,32 @@ export default function ChatPage() {
   ]);
   const [inputMessage, setInputMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [userReports, setUserReports] = useState([]); // State to store user reports
+  const [userReports, setUserReports] = useState([]);
 
-  // Fetch user reports when the component mounts
+
   useEffect(() => {
     const fetchUserReports = async () => {
       const userId = localStorage.getItem("userId");
       if (!userId) {
-        console.error("User ID not found");
         return;
       }
 
       try {
-        const response = await fetch(`http://localhost:5000/user-reports-list?userId=${userId}`);
+        const API = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+        const response = await fetch(`${API}/user-reports-list?userId=${userId}`);
         if (!response.ok) {
           throw new Error("Failed to fetch reports");
         }
         const data = await response.json();
-        setUserReports(data); // Store the fetched reports in state
-      } catch (error) {
-        console.error("Error fetching reports:", error);
+        setUserReports(data);
+      } catch {
+        // silently ignore fetch errors
       }
     };
 
     fetchUserReports();
   }, []);
 
-  // Transform user reports into a string
   const transformReportsToString = () => {
     return userReports
       .map((report, index) => {
@@ -79,18 +77,15 @@ export default function ChatPage() {
     setInputMessage("");
     setIsLoading(true);
 
-    console.log("Sending message to API:", userMessage);
+
 
     try {
-      // Transform reports into a string
       const reportsString = transformReportsToString();
 
-      const response = await fetch(
-        "https://aurum79-langflow.hf.space/api/v1/run/ffd2d954-40e6-41a8-aa0d-63eb0f14e169?stream=false",
-        {
+      const LANGFLOW_URL = process.env.NEXT_PUBLIC_LANGFLOW_URL || "https://aurum79-langflow.hf.space/api/v1/run/ffd2d954-40e6-41a8-aa0d-63eb0f14e169?stream=false";
+      const response = await fetch(LANGFLOW_URL, {
           method: "POST",
           headers: {
-            Authorization: "Bearer <TOKEN>",
             "Content-Type": "application/json",
             "x-api-key": process.env.NEXT_PUBLIC_LANGFLOW_API_KEY,
           },
@@ -103,16 +98,13 @@ export default function ChatPage() {
               "ChatOutput-gop4R": {},
               "GroqModel-akwmH": {},
               "CombineText-OgpZW": {},
-              "TextInput-LiP6A": {
-                value: reportsString, // Pass the reports string as a tweak
-              },
+              "TextInput-LiP6A": { value: reportsString },
             },
           }),
         }
       );
 
       const data = await response.json();
-      console.log("API response:", data);
 
       if (data?.outputs) {
         const assistantMessage = {
@@ -124,7 +116,7 @@ export default function ChatPage() {
         throw new Error("Invalid API response");
       }
     } catch (error) {
-      console.error("Error:", error);
+
       setMessages((prev) => [
         ...prev,
         {
@@ -139,7 +131,6 @@ export default function ChatPage() {
 
   return (
     <div>
-      <Sidebar />
       <div className="flex w-full max-h-full min-h-screen bg-[#F8FAFC] dark:bg-[#0F172A]">
         <div className="w-full h-full">
           <div className="flex flex-col mx-4 mt-4 ml-32">
