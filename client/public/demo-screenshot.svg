@@ -1,0 +1,88 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="1280" height="720" fill="#020617"/>
+    <rect width="1280" height="720" fill="url(#bg_gradient)"/>
+
+    <!-- Sidebar -->
+    <rect x="0" y="0" width="250" height="720" fill="#0f172a" fill-opacity="0.8"/>
+    <rect x="0" y="0" width="250" height="720" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+    
+    <!-- Sidebar Items -->
+    <rect x="25" y="40" width="40" height="40" rx="8" fill="url(#logo_gradient)"/>
+    <rect x="80" y="48" width="120" height="24" rx="4" fill="white" fill-opacity="0.1"/>
+    
+    <rect x="20" y="120" width="210" height="48" rx="8" fill="#1e293b"/>
+    <rect x="35" y="134" width="20" height="20" rx="4" fill="#f59e0b"/>
+    <rect x="70" y="138" width="100" height="12" rx="2" fill="white" fill-opacity="0.9"/>
+    
+    <rect x="20" y="180" width="210" height="48" rx="8" fill="transparent"/>
+    <rect x="35" y="194" width="20" height="20" rx="4" fill="white" fill-opacity="0.2"/>
+    <rect x="70" y="198" width="100" height="12" rx="2" fill="white" fill-opacity="0.4"/>
+
+    <rect x="20" y="240" width="210" height="48" rx="8" fill="transparent"/>
+    <rect x="35" y="254" width="20" height="20" rx="4" fill="white" fill-opacity="0.2"/>
+    <rect x="70" y="258" width="100" height="12" rx="2" fill="white" fill-opacity="0.4"/>
+
+    <!-- Main Content Area -->
+    <!-- Metric Cards -->
+    <g transform="translate(300, 40)">
+        <!-- Card 1: Pace -->
+        <rect x="0" y="0" width="280" height="180" rx="16" fill="#1e293b" fill-opacity="0.5" stroke="white" stroke-opacity="0.05"/>
+        <text x="24" y="32" fill="#94a3b8" font-family="sans-serif" font-size="14" font-weight="600">OVERALL PACE</text>
+        <!-- Circle -->
+        <circle cx="140" cy="100" r="50" stroke="#334155" stroke-width="12"/>
+        <circle cx="140" cy="100" r="50" stroke="#f59e0b" stroke-width="12" stroke-dasharray="250" stroke-dashoffset="60" transform="rotate(-90 140 100)"/>
+        <text x="140" y="110" fill="white" font-family="sans-serif" font-size="24" font-weight="bold" text-anchor="middle">78%</text>
+
+        <!-- Card 2: Modulation -->
+        <rect x="310" y="0" width="280" height="180" rx="16" fill="#1e293b" fill-opacity="0.5" stroke="white" stroke-opacity="0.05"/>
+        <text x="334" y="32" fill="#94a3b8" font-family="sans-serif" font-size="14" font-weight="600">MODULATION</text>
+        <circle cx="450" cy="100" r="50" stroke="#334155" stroke-width="12"/>
+        <circle cx="450" cy="100" r="50" stroke="#e11d48" stroke-width="12" stroke-dasharray="314" stroke-dashoffset="80" transform="rotate(-90 450 100)"/>
+        <text x="450" y="110" fill="white" font-family="sans-serif" font-size="24" font-weight="bold" text-anchor="middle">85%</text>
+
+        <!-- Card 3: Clarity -->
+        <rect x="620" y="0" width="280" height="180" rx="16" fill="#1e293b" fill-opacity="0.5" stroke="white" stroke-opacity="0.05"/>
+        <text x="644" y="32" fill="#94a3b8" font-family="sans-serif" font-size="14" font-weight="600">CLARITY</text>
+        <circle cx="760" cy="100" r="50" stroke="#334155" stroke-width="12"/>
+        <circle cx="760" cy="100" r="50" stroke="#fb923c" stroke-width="12" stroke-dasharray="314" stroke-dashoffset="40" transform="rotate(-90 760 100)"/>
+        <text x="760" y="110" fill="white" font-family="sans-serif" font-size="24" font-weight="bold" text-anchor="middle">92%</text>
+    </g>
+
+    <!-- Chart Section -->
+    <g transform="translate(300, 260)">
+        <rect x="0" y="0" width="900" height="400" rx="16" fill="#1e293b" fill-opacity="0.4" stroke="white" stroke-opacity="0.05"/>
+        <text x="30" y="40" fill="white" font-family="sans-serif" font-size="18" font-weight="600">Performance Trend</text>
+        
+        <!-- Grid Lines -->
+        <line x1="30" y1="350" x2="870" y2="350" stroke="#334155" stroke-width="1"/>
+        <line x1="30" y1="280" x2="870" y2="280" stroke="#334155" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="30" y1="210" x2="870" y2="210" stroke="#334155" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="30" y1="140" x2="870" y2="140" stroke="#334155" stroke-width="1" stroke-dasharray="4 4"/>
+
+        <!-- Chart Line -->
+        <path d="M30 300 Q 150 250, 200 280 T 400 200 T 600 150 T 870 100" fill="none" stroke="url(#chart_gradient)" stroke-width="4"/>
+        
+        <!-- Area under curve (optional opacity) -->
+        <path d="M30 300 Q 150 250, 200 280 T 400 200 T 600 150 T 870 100 V 350 H 30 Z" fill="url(#chart_fill)" fill-opacity="0.2"/>
+    </g>
+
+    <defs>
+        <linearGradient id="bg_gradient" x1="0" y1="0" x2="1280" y2="720" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#020617"/>
+            <stop offset="1" stop-color="#1e1b4b"/>
+        </linearGradient>
+        <linearGradient id="logo_gradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#f59e0b"/>
+            <stop offset="1" stop-color="#e11d48"/>
+        </linearGradient>
+        <linearGradient id="chart_gradient" x1="0" y1="0" x2="900" y2="0" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#f59e0b"/>
+            <stop offset="1" stop-color="#e11d48"/>
+        </linearGradient>
+        <linearGradient id="chart_fill" x1="0" y1="0" x2="0" y2="400" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#f59e0b"/>
+            <stop offset="1" stop-color="transparent"/>
+        </linearGradient>
+    </defs>
+</svg>

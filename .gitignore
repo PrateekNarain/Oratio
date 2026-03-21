@@ -1,0 +1,50 @@
+## Node / Next
+node_modules/
+client/.next/
+client/.env.local
+
+## Python
+server/.venv/
+server/capstone_venv_py310/
+*.pyc
+__pycache__/
+*.egg-info/
+venv/
+env/
+ENV/
+.env
+
+## Data, models, uploads
+/server/uploads/
+/uploads/
+/output/
+/pretrained_models/
+/wav2vec2_checkpoints/
+server/wav2vec2_checkpoints/
+**/wav2vec2_checkpoints/
+*.ckpt
+*.pt
+*.pth
+*.whl
+*.bin
+*.safetensors
+*.safetensors.index.json
+
+## OS / Editors
+.DS_Store
+.vscode/
+*.log
+
+## Secrets
+.env
+.env.*
+
+## Misc
+.pytest_cache/
+.ipynb_checkpoints/
+
+/server/node_modules
+/server/.venv
+/server/__pycache__
+/server/myenv
+.env.local

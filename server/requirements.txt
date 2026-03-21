@@ -1,0 +1,144 @@
+# ============================================================================
+# ORATIO - Speech Analysis System Requirements
+# Python 3.10+ recommended
+# CUDA 11.8 compatible
+# ============================================================================
+
+# Core Web Framework
+Flask==3.0.3
+Flask-Cors==5.0.0
+Werkzeug==3.1.3
+
+# Authentication & Security
+bcrypt==4.2.1
+PyJWT==2.10.1
+
+# Database
+pymongo==4.10.1
+
+# Environment & Configuration
+python-dotenv==1.0.1
+
+# HTTP Requests
+requests==2.32.5
+
+# Data Processing & Analysis
+pandas==2.2.3
+numpy==1.26.4
+scikit-learn==1.5.2
+scipy==1.14.1
+
+# Audio Processing
+librosa==0.10.2.post1
+audioread==3.0.1
+soundfile==0.12.1
+pydub==0.25.1
+
+# Video Processing
+opencv-python==4.10.0.84
+opencv-contrib-python==4.10.0.84
+ffmpeg-python==0.2.0
+
+# Deep Learning - PyTorch with CUDA 11.8
+--extra-index-url https://download.pytorch.org/whl/cu118
+torch==2.5.1+cu118
+torchaudio==2.5.1+cu118
+torchvision==0.20.1+cu118
+
+# Transformers & NLP
+transformers==4.46.3
+tokenizers==0.20.3
+huggingface-hub==0.26.2
+safetensors==0.4.5
+
+# Speech Processing
+speechbrain==1.0.3
+sentencepiece==0.2.0
+
+# Computer Vision & Face Analysis
+deepface==0.0.95
+tensorflow==2.18.0
+keras==3.7.0
+retina-face==0.0.17
+mtcnn==1.0.0
+
+# NLP & Linguistic Analysis
+spacy==3.8.2
+# Run after install: python -m spacy download en_core_web_sm
+
+# AI/LLM Integration
+google-generativeai==0.8.3
+google-ai-generativelanguage==0.6.10
+
+# Image Processing
+Pillow==11.0.0
+
+# Visualization
+matplotlib==3.9.2
+
+# Progress Bars
+tqdm==4.67.1
+
+# Additional Utilities
+protobuf==5.28.3
+regex==2024.11.6
+filelock==3.16.1
+fsspec==2024.10.0
+packaging==24.2
+pyyaml==6.0.2
+typing-extensions==4.12.2
+
+# ============================================================================
+# INSTALLATION INSTRUCTIONS
+# ============================================================================
+# 
+# 1. Create a virtual environment (Python 3.10 recommended):
+#    python -m venv venv
+#    
+# 2. Activate the virtual environment:
+#    Windows: venv\Scripts\activate
+#    Linux/Mac: source venv/bin/activate
+#    
+# 3. Install requirements:
+#    pip install -r requirements.txt
+#    
+# 4. Download spaCy language model:
+#    python -m spacy download en_core_web_sm
+#    
+# 5. Verify CUDA installation (optional):
+#    python -c "import torch; print(f'CUDA available: {torch.cuda.is_available()}')"
+#    
+# 6. Install FFmpeg (required for audio/video processing):
+#    Windows: Download from https://ffmpeg.org/download.html
+#    Linux: sudo apt-get install ffmpeg
+#    Mac: brew install ffmpeg
+#    
+# 7. Set up environment variables:
+#    Copy .env.example to .env and fill in your API keys:
+#    - MONGODB_URI
+#    - GOOGLE_API_KEY
+#    
+# ============================================================================
+# SYSTEM REQUIREMENTS
+# ============================================================================
+# 
+# - Python 3.10 or higher
+# - CUDA 11.8 (for GPU acceleration)
+# - 8GB+ RAM (16GB recommended)
+# - 10GB+ free disk space (for models)
+# - FFmpeg installed and in PATH
+# 
+# ============================================================================
+# NOTES
+# ============================================================================
+# 
+# - PyTorch with CUDA 11.8 support is specified via --extra-index-url
+# - First run will download large models (~2-5GB total):
+#   * Whisper Medium (~1.5GB)
+#   * Wav2Vec2 emotion model (~400MB)
+#   * DeepFace models (~500MB)
+#   * spaCy model (~50MB)
+# - Models are cached locally after first download
+# - GPU is optional but highly recommended for faster processing
+# 
+# ============================================================================
