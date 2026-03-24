@@ -1,9 +1,45 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import '../../components/bg.css';
+
+// Password strength evaluation
+function getPasswordStrength(password) {
+    const checks = {
+        minLength: password.length >= 8,
+        hasUppercase: /[A-Z]/.test(password),
+        hasLowercase: /[a-z]/.test(password),
+        hasNumber: /[0-9]/.test(password),
+        hasSpecial: /[!@#$%^&*(),.?":{}|<>\-_=+\[\]\\\/~`';]/.test(password),
+    };
+
+    const passed = Object.values(checks).filter(Boolean).length;
+
+    let level, label, color, barColor, percent;
+    if (passed <= 2) {
+        level = 'weak';
+        label = 'Weak';
+        color = 'text-red-500';
+        barColor = 'bg-red-500';
+        percent = '33%';
+    } else if (passed <= 4) {
+        level = 'medium';
+        label = 'Medium';
+        color = 'text-amber-500';
+        barColor = 'bg-amber-500';
+        percent = '66%';
+    } else {
+        level = 'strong';
+        label = 'Strong';
+        color = 'text-emerald-500';
+        barColor = 'bg-emerald-500';
+        percent = '100%';
+    }
+
+    return { checks, passed, level, label, color, barColor, percent };
+}
 
 export default function SignUp() {
     const [credentials, setCredentials] = useState({ name: "", email: "", password: "", confirmPassword: "" });
@@ -12,11 +48,19 @@ export default function SignUp() {
 
     const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:5000'
 
+    const strength = useMemo(() => getPasswordStrength(credentials.password), [credentials.password]);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        // Block submission if password doesn't meet all requirements
+        if (credentials.password && strength.level !== 'strong') {
+            setError("Password must meet all requirements: minimum 8 characters, at least 1 uppercase, 1 lowercase, 1 number, and 1 special character.");
+            return;
+        }
+
         if (credentials.password !== credentials.confirmPassword) {
-            alert("Passwords do not match");
+            setError("Passwords do not match");
             return;
         }
 
@@ -62,7 +106,16 @@ export default function SignUp() {
 
     const onChange = (e) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value });
+        if (error) setError("");
     };
+
+    const requirements = [
+        { key: 'minLength', label: 'Minimum 8 characters' },
+        { key: 'hasUppercase', label: 'At least 1 uppercase letter' },
+        { key: 'hasLowercase', label: 'At least 1 lowercase letter' },
+        { key: 'hasNumber', label: 'At least 1 number' },
+        { key: 'hasSpecial', label: 'At least 1 special character' },
+    ];
 
     return (
         <section className="flex items-center justify-center min-h-screen px-4 static-bg relative overflow-hidden">
@@ -131,6 +184,44 @@ export default function SignUp() {
                                     onChange={onChange}
                                     value={credentials.password}
                                 />
+
+                                {/* Password Strength Indicator */}
+                                {credentials.password && (
+                                    <div className="mt-3 space-y-2">
+                                        {/* Strength bar */}
+                                        <div className="flex items-center gap-3">
+                                            <div className="flex-1 h-2 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
+                                                <div
+                                                    className={`h-full rounded-full transition-all duration-500 ease-out ${strength.barColor}`}
+                                                    style={{ width: strength.percent }}
+                                                />
+                                            </div>
+                                            <span className={`text-xs font-bold min-w-[52px] text-right ${strength.color}`}>
+                                                {strength.label}
+                                            </span>
+                                        </div>
+
+                                        {/* Requirements checklist */}
+                                        <ul className="space-y-1 pt-1">
+                                            {requirements.map((req) => (
+                                                <li key={req.key} className="flex items-center gap-2 text-xs">
+                                                    {strength.checks[req.key] ? (
+                                                        <svg className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                                                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                                        </svg>
+                                                    ) : (
+                                                        <svg className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                                                            <circle cx="12" cy="12" r="6" />
+                                                        </svg>
+                                                    )}
+                                                    <span className={strength.checks[req.key] ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-500 dark:text-slate-400'}>
+                                                        {req.label}
+                                                    </span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
                             </div>
                             <div className="group">
                                 <label htmlFor="confirmPassword" className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2 transition-colors">
