@@ -14,6 +14,10 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.5+-ee4c2c?style=flat-square&logo=pytorch&logoColor=white)](https://pytorch.org/)
 [![Flask](https://img.shields.io/badge/Flask-3.0+-000000?style=flat-square&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
 
+<br>
+<img src="./client/public/dashboard.png" alt="ORATIO Dashboard" width="100%" style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+<br>
+
 </div>
 
 ---
